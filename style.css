@@ -2,16 +2,61 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', monospace;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
-  background: #050505;
-  color: #00ff9c;
+  background: radial-gradient(circle at top, #220000, #050000);
+  color: white;
   height: 100vh;
   overflow: hidden;
 }
 
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+  border-bottom: 1px solid rgba(255,0,0,0.2);
+}
+
+.logo {
+  color: red;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #ccc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: red;
+}
+
+.premium {
+  color: red;
+}
+
+.discord {
+  background: #5865f2;
+  padding: 6px 12px;
+  border-radius: 6px;
+  color: white;
+}
+
+/* PARTICLES */
 #particles-js {
   position: fixed;
   width: 100%;
@@ -19,7 +64,8 @@ body {
   z-index: -1;
 }
 
-.container {
+/* HERO */
+.hero {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,73 +74,31 @@ body {
   text-align: center;
 }
 
-.tagline {
-  margin-top: 10px;
-  color: #aaa;
-  letter-spacing: 2px;
-}
-
-/* GLITCH TEXT */
-.glitch {
+.hero h1 {
   font-size: 4rem;
-  position: relative;
-  color: #00ff9c;
+  color: red;
+  text-shadow: 0 0 20px rgba(255,0,0,0.6);
 }
 
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-}
-
-.glitch::before {
-  top: -2px;
-  color: #ff003c;
-  animation: glitch 2s infinite;
-}
-
-.glitch::after {
-  top: 2px;
-  color: #00c3ff;
-  animation: glitch 1.5s infinite;
-}
-
-@keyframes glitch {
-  0% { clip-path: inset(0 0 90% 0); }
-  50% { clip-path: inset(10% 0 10% 0); }
-  100% { clip-path: inset(80% 0 0 0); }
-}
-
-/* BUTTONS */
-.buttons {
-  margin-top: 40px;
-  display: flex;
-  gap: 20px;
+.hero p {
+  margin-top: 15px;
+  color: #bbb;
+  max-width: 600px;
+  line-height: 1.6;
 }
 
 .btn {
-  padding: 12px 30px;
-  border: 1px solid #00ff9c;
+  margin-top: 30px;
+  padding: 14px 32px;
+  border: 1px solid red;
+  color: red;
   text-decoration: none;
-  color: #00ff9c;
   letter-spacing: 2px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background: #00ff9c;
-  color: #000;
-  box-shadow: 0 0 20px #00ff9c;
-}
-
-.discord {
-  border-color: #5865f2;
-  color: #5865f2;
-}
-
-.discord:hover {
-  background: #5865f2;
-  box-shadow: 0 0 20px #5865f2;
-  color: white;
+  background: red;
+  color: black;
+  box-shadow: 0 0 25px red;
 }
