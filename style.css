@@ -2,24 +2,24 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', monospace;
 }
 
 body {
-  background: #0f172a;
-  color: white;
+  background: #050505;
+  color: #00ff9c;
   height: 100vh;
   overflow: hidden;
 }
 
 #particles-js {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: -1;
 }
 
-.content {
+.container {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,39 +28,73 @@ body {
   text-align: center;
 }
 
-.content h1 {
-  font-size: 4rem;
-  letter-spacing: 3px;
+.tagline {
+  margin-top: 10px;
+  color: #aaa;
+  letter-spacing: 2px;
 }
 
-.content p {
-  margin-top: 10px;
-  font-size: 1.2rem;
-  opacity: 0.8;
+/* GLITCH TEXT */
+.glitch {
+  font-size: 4rem;
+  position: relative;
+  color: #00ff9c;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+}
+
+.glitch::before {
+  top: -2px;
+  color: #ff003c;
+  animation: glitch 2s infinite;
+}
+
+.glitch::after {
+  top: 2px;
+  color: #00c3ff;
+  animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+  0% { clip-path: inset(0 0 90% 0); }
+  50% { clip-path: inset(10% 0 10% 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
 }
 
 .btn {
-  margin-top: 30px;
   padding: 12px 30px;
-  background: linear-gradient(45deg, #38bdf8, #6366f1);
-  color: white;
+  border: 1px solid #00ff9c;
   text-decoration: none;
-  border-radius: 30px;
-  font-weight: bold;
+  color: #00ff9c;
+  letter-spacing: 2px;
   transition: 0.3s;
 }
 
 .btn:hover {
-  transform: scale(1.1);
+  background: #00ff9c;
+  color: #000;
+  box-shadow: 0 0 20px #00ff9c;
 }
 
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: -1;
+.discord {
+  border-color: #5865f2;
+  color: #5865f2;
 }
 
-
+.discord:hover {
+  background: #5865f2;
+  box-shadow: 0 0 20px #5865f2;
+  color: white;
+}
