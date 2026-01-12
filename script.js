@@ -1,20 +1,14 @@
 particlesJS("particles-js", {
   particles: {
-    number: { value: 80 },
-    color: { value: "#ffffff" },
+    number: { value: 120 },
+    color: { value: "#00ff9c" },
     shape: { type: "circle" },
-    opacity: { value: 0.5 },
-    size: { value: 3 },
-    line_linked: {
-      enable: true,
-      distance: 150,
-      color: "#ffffff",
-      opacity: 0.4,
-      width: 1
-    },
+    opacity: { value: 0.4 },
+    size: { value: 2 },
     move: {
       enable: true,
-      speed: 3
+      speed: 1,
+      direction: "none"
     }
   },
   interactivity: {
@@ -24,4 +18,3 @@ particlesJS("particles-js", {
   },
   retina_detect: true
 });
-
